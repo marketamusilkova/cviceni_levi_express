@@ -47,7 +47,7 @@ console.log(journey)
         </div>
       ) : null}
 
-     {journey ? <SeatPicker seats={journey.seats}
+     {journey ? <SeatPicker seats={journey.seats} selectedSeat={journey.autoSeat}
      /> : null}
 
       <div className="controls container" onClick={handleBuy}>
