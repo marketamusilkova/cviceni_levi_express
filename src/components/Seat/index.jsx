@@ -12,7 +12,9 @@ export const Seat = ({ number, isOccupied, isSelected, onSelect }) => {
   const handleOnSelect = () => {
     if (isOccupied === false) {
       onSelect(number);
-    } else {null}
+    } else {
+      null;
+    }
   };
 
   return (

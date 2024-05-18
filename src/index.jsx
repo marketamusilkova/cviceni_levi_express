@@ -19,10 +19,10 @@ const router = createBrowserRouter([
         path: '/reservation/:reservationId',
         element: <ReservationPage />,
       },
-    ]
+    ],
   },
 ]);
 
 createRoot(document.querySelector('#app')).render(
-  <RouterProvider router={router} />
+  <RouterProvider router={router} />,
 );

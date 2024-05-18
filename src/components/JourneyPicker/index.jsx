@@ -70,7 +70,7 @@ export const JourneyPicker = ({ onJourneyChange }) => {
           </label>
           <div className="journey-picker__controls">
             <button
-              disabled={!(fromCity && toCity && date)}
+              disabled={!(fromCity && toCity && date && fromCity !== toCity)}
               className="btn"
               type="submit"
             >

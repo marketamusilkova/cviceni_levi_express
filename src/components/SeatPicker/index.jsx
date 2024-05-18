@@ -7,7 +7,12 @@ export const SeatPicker = ({ seats, selectedSeat, onSeatSelected }) => {
       <h2>Vyberte sedadlo</h2>
       <div className="seats">
         {seats.map((seat, index) => (
-          <SeatRow key={index} row={seat} rowSelectedSeat={selectedSeat} onSeatSelected={onSeatSelected}/>
+          <SeatRow
+            key={index}
+            row={seat}
+            rowSelectedSeat={selectedSeat}
+            onSeatSelected={onSeatSelected}
+          />
         ))}
       </div>
     </div>

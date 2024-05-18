@@ -7,11 +7,11 @@ import { SeatPicker } from '../../components/SeatPicker';
 export const HomePage = () => {
   const navigate = useNavigate();
   const [journey, setJourney] = useState(null);
-  const [userSeat, setUserSeat] = useState(null)
+  const [userSeat, setUserSeat] = useState(null);
 
   const handleJourneyChange = (journeyData) => {
     setJourney(journeyData);
-    setUserSeat(journeyData.autoSeat)
+    setUserSeat(journeyData.autoSeat);
   };
 
   const handleBuy = async () => {
@@ -34,23 +34,24 @@ export const HomePage = () => {
     console.log(reservationId);
     navigate(`/reservation/${reservationId}`);
   };
-console.log(journey)
+  console.log(journey);
 
   return (
     <main>
       <JourneyPicker onJourneyChange={handleJourneyChange} />
       {journey ? (
         <div>
-          {/* <p>
-            Nalezeno spojení s id
-            {journey.journeyId}
-          </p>{' '} */}
           <JourneyDetail journey={journey} />
         </div>
       ) : null}
 
-     {journey ? <SeatPicker seats={journey.seats} selectedSeat={userSeat} onSeatSelected={setUserSeat}
-     /> : null}
+      {journey ? (
+        <SeatPicker
+          seats={journey.seats}
+          selectedSeat={userSeat}
+          onSeatSelected={setUserSeat}
+        />
+      ) : null}
 
       <div className="controls container" onClick={handleBuy}>
         <button className="btn btn--big" type="button">
