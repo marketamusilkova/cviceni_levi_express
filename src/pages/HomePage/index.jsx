@@ -7,9 +7,11 @@ import { SeatPicker } from '../../components/SeatPicker';
 export const HomePage = () => {
   const navigate = useNavigate();
   const [journey, setJourney] = useState(null);
+  const [userSeat, setUserSeat] = useState(null)
 
   const handleJourneyChange = (journeyData) => {
     setJourney(journeyData);
+    setUserSeat(journeyData.autoSeat)
   };
 
   const handleBuy = async () => {
@@ -22,7 +24,7 @@ export const HomePage = () => {
         },
         body: JSON.stringify({
           action: 'create',
-          seat: journey.autoSeat,
+          seat: userSeat,
           journeyId: journey.journeyId,
         }),
       },
@@ -47,7 +49,7 @@ console.log(journey)
         </div>
       ) : null}
 
-     {journey ? <SeatPicker seats={journey.seats} selectedSeat={journey.autoSeat}
+     {journey ? <SeatPicker seats={journey.seats} selectedSeat={userSeat} onSeatSelected={setUserSeat}
      /> : null}
 
       <div className="controls container" onClick={handleBuy}>

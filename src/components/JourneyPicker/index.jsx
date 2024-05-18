@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
-const citiesPole = [
-  { name: 'Praha', code: 'CZ-PRG' },
-  { name: 'Brno', code: 'CZ-BRQ' },
-];
 
 export const JourneyPicker = ({ onJourneyChange }) => {
   const [fromCity, setFromCity] = useState('');

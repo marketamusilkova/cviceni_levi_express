@@ -1,16 +1,23 @@
 import './style.css';
 
-export const Seat = ({ number, isOccupied, isSelected }) => {
-let className = "seat"
-if (isOccupied) {
-  className += " seat--occupied"
-}
-if (isSelected) {
-  className += " seat--selected"
-}
+export const Seat = ({ number, isOccupied, isSelected, onSelect }) => {
+  let className = 'seat';
+  if (isOccupied) {
+    className += ' seat--occupied';
+  }
+  if (isSelected) {
+    className += ' seat--selected';
+  }
+
+  const handleOnSelect = () => {
+    if (isOccupied === false) {
+      onSelect(number);
+    } else {null}
+  };
 
   return (
     <svg
+      onClick={handleOnSelect}
       className={className}
       viewBox="0 0 100 100"
       role="button"
