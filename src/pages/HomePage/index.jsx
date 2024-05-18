@@ -1,3 +1,4 @@
+import { JourneyDetail } from '../../components/JourneyDetail';
 import { JourneyPicker } from '../../components/JourneyPicker';
 import { useState } from 'react';
 
@@ -11,10 +12,13 @@ export const HomePage = () => {
     <main>
       <JourneyPicker onJourneyChange={handleJourneyChange} />
       {journey ? (
-        <p>
-          Nalezeno spojení s id
-          {journey.journeyId}
-        </p>
+        <div>
+          {/* <p>
+            Nalezeno spojení s id
+            {journey.journeyId}
+          </p>{' '} */}
+          <JourneyDetail journey={journey}/>
+        </div>
       ) : null}
     </main>
   );
